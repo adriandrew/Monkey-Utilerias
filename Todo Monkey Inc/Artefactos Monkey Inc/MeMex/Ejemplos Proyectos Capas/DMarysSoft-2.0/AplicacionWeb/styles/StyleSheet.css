@@ -1,0 +1,133 @@
+﻿body 
+{
+    width: 1000px;
+    margin: 0 auto;
+    border: 5px solid orange;
+    background-color: Black; 
+   /* background: url(images/universe.jpg); */
+}
+
+#form
+{
+    background-color: White;
+    margin-bottom: 0;    
+}
+
+#header, #footer
+{
+    background: #354D3B; 
+    
+    /* naranja bonito #CC9900 */
+}
+
+#header
+{
+    height:250px;
+    /*background:url("images/headerDMarys.jpg");   */ 
+    width: auto;
+    margin-bottom:20px;
+    border-bottom: 5px solid orange;
+}
+
+/*
+#header2 
+{
+    position: absolute;
+    top:0;
+    left: 100px;
+}
+*/
+
+#footer
+{
+    height:200px;
+    /*background:url("images/headerDMarys.jpg");   */ 
+    width: auto;
+    border-top: 5px solid orange;
+    clear: both;
+    /* margin-bottom:-19px;*/
+}
+
+    width: auto;
+    border-top: 5px solid orange;
+    clear: both;
+    /* margin-bottom:-19px;*/
+}
+
+#page
+{
+    clear: both;
+    height: 200px;
+    float: left;
+}
+
+#menu, #content
+{
+    margin-bottom: 20px;
+}
+
+#menu
+{
+    float: left;
+    padding: 0 5px 0 5px;
+    height: auto;
+    width: 184px;
+}
+
+#statusUser
+{
+    width: 600px;
+    height: auto;
+    float: right;
+    text-align:right;
+    margin-right: 20px;
+}
+
+/*
+#LoginName:hover
+{
+    color: Red;
+} 
+
+#LoginStatus
+{
+    width: auto;
+    height: auto;
+}
+
+#LoginName
+{
+    width: auto;
+    height: auto;
+}*/
+
+#LoginStatus:hover
+{
+   color: Red;
+   text-decoration: none;
+   /*background-color: Aqua;*/
+}
+
+#content
+{
+    width: 770px;
+    float: right;
+    margin-right: 5px;
+    border: 3px solid orange;
+    padding: 5px;
+}
+
+#contentWithoutMenu
+{
+    width: auto;
+    height: auto;
+    border-top: 3px solid orange;
+    border-bottom: 3px solid orange;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.alinearLogin
+{
+    margin-left: 100px;   
+}

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Escuela\Web.csproj", "{258ECFFF-7B21-4EE7-B5D6-D3B4EF3B9D71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesoDatos", "Conexion\AccesoDatos.csproj", "{1B6F3BE3-0AF9-452E-BFDC-F98F13C51C3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logica", "Logica\Logica.csproj", "{76939604-B1D7-4594-8A3B-E7EDBC1C3B2E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{258ECFFF-7B21-4EE7-B5D6-D3B4EF3B9D71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{258ECFFF-7B21-4EE7-B5D6-D3B4EF3B9D71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{258ECFFF-7B21-4EE7-B5D6-D3B4EF3B9D71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{258ECFFF-7B21-4EE7-B5D6-D3B4EF3B9D71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B6F3BE3-0AF9-452E-BFDC-F98F13C51C3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B6F3BE3-0AF9-452E-BFDC-F98F13C51C3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B6F3BE3-0AF9-452E-BFDC-F98F13C51C3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B6F3BE3-0AF9-452E-BFDC-F98F13C51C3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76939604-B1D7-4594-8A3B-E7EDBC1C3B2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76939604-B1D7-4594-8A3B-E7EDBC1C3B2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76939604-B1D7-4594-8A3B-E7EDBC1C3B2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76939604-B1D7-4594-8A3B-E7EDBC1C3B2E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

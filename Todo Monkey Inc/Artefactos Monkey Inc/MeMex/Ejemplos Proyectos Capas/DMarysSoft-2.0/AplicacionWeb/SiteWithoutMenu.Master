@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteWithoutMenu.master.cs" Inherits="DMarysSoftWEB.SiteWithoutMenu" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Sistema D'Marys Soft</title>
+    <link href="styles/StyleSheet.css" rel="Stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body background="images/fondo-rojo.jpg" bgproperties="fixed">
+    <form id="form" runat="server">
+   
+      <div id="header">
+        <asp:Image ID="Header" runat="server" 
+              ImageUrl="~/images/Header.jpg" />
+            </div>  <%--end header--%>
+          
+   <!-- <div id="page"> -->
+
+        <%-- <div id="statusUser">          
+            <asp:LoginName ID="LoginName" CssClass="LoginName" runat="server" Font-Bold="True" 
+                  Font-Size="Large" />
+              &nbsp;<asp:LoginStatus ID="LoginStatus" runat="server" 
+                  LogoutAction="RedirectToLoginPage" LogoutPageUrl="~/Login.aspx" 
+                  Font-Bold="True" Font-Size="Large" />
+        </div> --%>
+
+        <div id="contentWithoutMenu">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
+          
+            </asp:ContentPlaceHolder>
+        </div> <!-- end contentWithoutMenu -->
+
+          <!-- </div> <!-- end page -->
+
+            <div id="footer">
+            <asp:Image ID="Footer" runat="server" ImageUrl="~/images/Footer.jpg" />
+        </div><%--end footer --%>
+
+    </form>
+</body>
+</html>

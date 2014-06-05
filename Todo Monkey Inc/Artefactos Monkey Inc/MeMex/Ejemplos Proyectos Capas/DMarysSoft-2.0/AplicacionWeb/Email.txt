@@ -1,0 +1,3 @@
+﻿Hola <%UserName%> tu contrasena es: <%Password%>
+
+Lindo dia! :D

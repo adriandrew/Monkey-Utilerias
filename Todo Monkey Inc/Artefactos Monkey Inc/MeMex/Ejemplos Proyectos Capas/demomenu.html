@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Menú html con submenú</title>
+<style>
+ul#menu {
+ background: #333;
+ width: 940px;
+ float:left;
+ padding: 5px;
+}
+   
+ul#menu li {
+ color: #fff;
+ float: left;
+ list-style: none;
+ margin: 0% 5%;
+}
+   
+ul#menu li:hover{
+ color: #aaa073;
+ cursor:pointer;
+}
+   
+ul#menu ul {
+ display: none;
+ position: absolute;
+ top: 49px;
+ background: #333;
+ color: #fff;
+ padding: 5px 0px 5px 5px;
+ margin: 0;
+ }
+   
+ul#menu ul li{
+ float: left;
+ color: #fff;
+ width:100%;
+ margin:2% 0%;
+}
+  
+  
+ul#menu ul li a{
+ color: #fff;
+}
+   
+ul#menu ul li a:hover{
+ color: #aaa073;
+ cursor:pointer;
+}
+   
+ul#menu li:hover ul ul,ul#menu li:hover ul ul ul,ul#menu li.iehover ul ul,ul#menu li.iehover ul ul ul {
+ display: none;
+ cursor:pointer;
+}
+   
+ul#menu li:hover ul,ul#menu ul li:hover ul,ul#menu ul ul li:hover ul,ul#menu li.iehover ul,ul#menu ul li.iehover ul,ul#menu ul ul li.iehover ul {
+ display: block;
+ cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+<ul id="menu">
+ <li>PESTAÑA 1</li>
+ <li>PESTAÑA 2</li>
+ <li>PESTAÑA 3</li>
+ <li>PESTAÑA 4
+  <ul>
+    <li>SUBMENÚ 1</li>
+    <li>SUBMENÚ 2</li>
+  </ul>
+ </li>
+ <li>PESTAÑA 5</li>
+</ul>
+</body>
+</html>

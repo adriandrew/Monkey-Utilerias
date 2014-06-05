@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Logica.Alumno" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAACIAAAAIACEACAAgAAAAAAAAgAIAIIAAhAAAAI=</HashCode>
+      <FileName>Alumno.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logica.Asistencia" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAIAAIAQAAAAEACAAAEAAAABEAAAAAAAAhAAAAISA=</HashCode>
+      <FileName>Asistencia.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logica.Calificacion" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgIAAAIAAABAAAAAQAEAAAABAAACAQAAAisAAAAqAA=</HashCode>
+      <FileName>Calificacion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logica.Colegiatura" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgEAAAIAABAAAAAQAAAAAAAAAEAQAABAEAAAAAABAA=</HashCode>
+      <FileName>Colegiatura.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logica.Materia" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAACIAACAgACAgAAAhAAAAAQAAAAAAAAgAAAAIAA=</HashCode>
+      <FileName>Materia.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logica.Nivelacademico" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAABICAAAAAAEAABABAAAQAAAAAAAAAAAAAAACAAAQ=</HashCode>
+      <FileName>Nivelacademico.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logica.Profesor" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAAAACQAIACkACAAgAAAAAAAAAAAAAAAAhAAAgI=</HashCode>
+      <FileName>Profesor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

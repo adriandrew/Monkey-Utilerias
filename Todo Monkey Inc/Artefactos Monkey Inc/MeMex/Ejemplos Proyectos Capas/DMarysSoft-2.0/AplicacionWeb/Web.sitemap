@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="" title=""  description="">
+
+    <siteMapNode url="" title="Ventas"  description="Administrar Ventas">
+      <siteMapNode url="~/Sales/PuntoVenta.aspx" title="Punto de Venta"  description="Punto de Venta"/>
+      <siteMapNode url="~/Sales/MostrarVentas.aspx" title="Mostrar Ventas"  description="Mostrar Ventas"/>
+    </siteMapNode>
+
+    <siteMapNode url="~/Orders/AdministrarPedidos.aspx" title="Pedidos"  description="Administrar Pedidos" >
+    </siteMapNode>
+
+    <siteMapNode url="~/Clients/AdministrarClientes.aspx" title="Clientes"  description="Administrar Clientes">
+    </siteMapNode>
+
+    <siteMapNode url="~/Providers/AdministrarProveedores.aspx" title="Proveedores"  description="Administrar Proveedores">
+    </siteMapNode>
+
+    <siteMapNode url="~/Offices/AdministrarSucursales.aspx" title="Sucursales"  description="Administrar Sucursales">
+      </siteMapNode>
+    
+    <siteMapNode url="" title="Usuarios"  description="Administrar Usuarios">
+      <siteMapNode url="~/User/MostrarUsuarios.aspx" title="Mostrar Usuarios"  description="Mostrar Usuarios" />
+      <siteMapNode url="~/User/AgregarUsuarios.aspx" title="Agregar Usuarios"  description="Agregar Usuarios" />
+      <siteMapNode url="~/User/EditarUsuarios.aspx" title="Editar Usuarios"  description="Editar Usuarios" />
+      <siteMapNode url="~/User/EliminarUsuarios.aspx" title="Eliminar Usuarios"  description="Eliminar Usuarios" />
+    </siteMapNode>
+    
+  </siteMapNode><!--end siteMapNode de Default-->
+    
+</siteMap>

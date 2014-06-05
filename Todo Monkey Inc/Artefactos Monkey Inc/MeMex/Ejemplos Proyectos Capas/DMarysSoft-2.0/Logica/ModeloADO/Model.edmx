@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DMarysDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="DMarysDBModelStoreContainer">
+          <EntitySet Name="Clientes" EntityType="DMarysDBModel.Store.Clientes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Creditos" EntityType="DMarysDBModel.Store.Creditos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DetalleCredito" EntityType="DMarysDBModel.Store.DetalleCredito" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DetalleSucursal" EntityType="DMarysDBModel.Store.DetalleSucursal" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Productos" EntityType="DMarysDBModel.Store.Productos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Proveedores" EntityType="DMarysDBModel.Store.Proveedores" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sucursales" EntityType="DMarysDBModel.Store.Sucursales" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuarios" EntityType="DMarysDBModel.Store.Usuarios" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VentaProducto" EntityType="DMarysDBModel.Store.VentaProducto" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Ventas" EntityType="DMarysDBModel.Store.Ventas" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="idCliente" />
+          </Key>
+          <Property Name="idCliente" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="direccion" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="telefono" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="email" Type="varchar" Nullable="false" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="Creditos">
+          <Key>
+            <PropertyRef Name="idCredito" />
+          </Key>
+          <Property Name="idCredito" Type="int" Nullable="false" />
+          <Property Name="idCliente" Type="int" Nullable="false" />
+          <Property Name="idUsuario" Type="int" Nullable="false" />
+          <Property Name="montoInicial" Type="float" Nullable="false" />
+          <Property Name="intereses" Type="float" Nullable="false" />
+          <Property Name="montoActual" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DetalleCredito">
+          <Key>
+            <PropertyRef Name="idDetalleCredito" />
+          </Key>
+          <Property Name="idDetalleCredito" Type="int" Nullable="false" />
+          <Property Name="idCredito" Type="int" Nullable="false" />
+          <Property Name="abono" Type="float" Nullable="false" />
+          <Property Name="fecha" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DetalleSucursal">
+          <Key>
+            <PropertyRef Name="codigoProducto" />
+          </Key>
+          <Property Name="codigoProducto" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="idSucursal" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Productos">
+          <Key>
+            <PropertyRef Name="codigoProducto" />
+          </Key>
+          <Property Name="codigoProducto" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="idProveedor" Type="int" Nullable="false" />
+          <Property Name="idSucursal" Type="int" Nullable="false" />
+          <Property Name="producto" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="stock" Type="int" Nullable="false" />
+          <Property Name="precio" Type="float" Nullable="false" />
+          <Property Name="talla" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="modelo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="color" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="marca" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="estilo" Type="varchar" MaxLength="50" />
+          <Property Name="sexo" Type="varchar" MaxLength="20" />
+          <Property Name="descuento" Type="float" Nullable="false" />
+          <Property Name="tipoProducto" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="fechaIngreso" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Proveedores">
+          <Key>
+            <PropertyRef Name="idProveedor" />
+          </Key>
+          <Property Name="idProveedor" Type="int" Nullable="false" />
+          <Property Name="nombreEmpresa" Type="varchar" Nullable="false" MaxLength="70" />
+          <Property Name="direccionEmpresa" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="telefonoEmpresa" Type="varchar" Nullable="false" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="Sucursales">
+          <Key>
+            <PropertyRef Name="idSucursal" />
+          </Key>
+          <Property Name="idSucursal" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="direccion" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="telefono" Type="varchar" Nullable="false" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="int" Nullable="false" />
+          <Property Name="idSucursal" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="direccion" Type="varchar" MaxLength="100" />
+          <Property Name="sexo" Type="varchar" MaxLength="20" />
+          <Property Name="telefono" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="VentaProducto">
+          <Key>
+            <PropertyRef Name="idVentaProducto" />
+          </Key>
+          <Property Name="idVentaProducto" Type="int" Nullable="false" />
+          <Property Name="idVenta" Type="int" Nullable="false" />
+          <Property Name="idProducto" Type="int" Nullable="false" />
+          <Property Name="cantidad" Type="int" Nullable="false" />
+          <Property Name="precioUnitario" Type="float" Nullable="false" />
+          <Property Name="importe" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ventas">
+          <Key>
+            <PropertyRef Name="idVenta" />
+          </Key>
+          <Property Name="idVenta" Type="int" Nullable="false" />
+          <Property Name="idUsuario" Type="int" Nullable="false" />
+          <Property Name="cliente" Type="varchar" MaxLength="50" />
+          <Property Name="sucursal" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="fecha" Type="datetime" Nullable="false" />
+          <Property Name="subtotal" Type="float" />
+          <Property Name="iva" Type="float" />
+          <Property Name="total" Type="float" />
+          <Property Name="efectivo" Type="float" />
+          <Property Name="cambio" Type="float" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DMarysDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="DMarysDBEntities">
+          <EntitySet Name="Clientes" EntityType="DMarysDBModel.Cliente" />
+          <EntitySet Name="Creditos" EntityType="DMarysDBModel.Credito" />
+          <EntitySet Name="DetalleCreditoes" EntityType="DMarysDBModel.DetalleCredito" />
+          <EntitySet Name="DetalleSucursals" EntityType="DMarysDBModel.DetalleSucursal" />
+          <EntitySet Name="Productos" EntityType="DMarysDBModel.Producto" />
+          <EntitySet Name="Proveedores" EntityType="DMarysDBModel.Proveedore" />
+          <EntitySet Name="Sucursales" EntityType="DMarysDBModel.Sucursale" />
+          <EntitySet Name="Usuarios" EntityType="DMarysDBModel.Usuario" />
+          <EntitySet Name="VentaProductoes" EntityType="DMarysDBModel.VentaProducto" />
+          <EntitySet Name="Ventas" EntityType="DMarysDBModel.Venta" />
+        </EntityContainer>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="idCliente" />
+          </Key>
+          <Property Name="idCliente" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="direccion" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="telefono" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Credito">
+          <Key>
+            <PropertyRef Name="idCredito" />
+          </Key>
+          <Property Name="idCredito" Type="Int32" Nullable="false" />
+          <Property Name="idCliente" Type="Int32" Nullable="false" />
+          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <Property Name="montoInicial" Type="Double" Nullable="false" />
+          <Property Name="intereses" Type="Double" Nullable="false" />
+          <Property Name="montoActual" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DetalleCredito">
+          <Key>
+            <PropertyRef Name="idDetalleCredito" />
+          </Key>
+          <Property Name="idDetalleCredito" Type="Int32" Nullable="false" />
+          <Property Name="idCredito" Type="Int32" Nullable="false" />
+          <Property Name="abono" Type="Double" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DetalleSucursal">
+          <Key>
+            <PropertyRef Name="codigoProducto" />
+          </Key>
+          <Property Name="codigoProducto" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="idSucursal" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="codigoProducto" />
+          </Key>
+          <Property Name="codigoProducto" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="idProveedor" Type="Int32" Nullable="false" />
+          <Property Name="idSucursal" Type="Int32" Nullable="false" />
+          <Property Name="producto1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="stock" Type="Int32" Nullable="false" />
+          <Property Name="precio" Type="Double" Nullable="false" />
+          <Property Name="talla" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="modelo" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="color" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="marca" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="estilo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="sexo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="descuento" Type="Double" Nullable="false" />
+          <Property Name="tipoProducto" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="fechaIngreso" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Proveedore">
+          <Key>
+            <PropertyRef Name="idProveedor" />
+          </Key>
+          <Property Name="idProveedor" Type="Int32" Nullable="false" />
+          <Property Name="nombreEmpresa" Type="String" Nullable="false" MaxLength="70" Unicode="false" FixedLength="false" />
+          <Property Name="direccionEmpresa" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="telefonoEmpresa" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Sucursale">
+          <Key>
+            <PropertyRef Name="idSucursal" />
+          </Key>
+          <Property Name="idSucursal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="direccion" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="telefono" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <Property Name="idSucursal" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="direccion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="sexo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="telefono" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="VentaProducto">
+          <Key>
+            <PropertyRef Name="idVentaProducto" />
+          </Key>
+          <Property Name="idVentaProducto" Type="Int32" Nullable="false" />
+          <Property Name="idVenta" Type="Int32" Nullable="false" />
+          <Property Name="idProducto" Type="Int32" Nullable="false" />
+          <Property Name="cantidad" Type="Int32" Nullable="false" />
+          <Property Name="precioUnitario" Type="Double" Nullable="false" />
+          <Property Name="importe" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Venta">
+          <Key>
+            <PropertyRef Name="idVenta" />
+          </Key>
+          <Property Name="idVenta" Type="Int32" Nullable="false" />
+          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <Property Name="cliente" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="sucursal" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" />
+          <Property Name="subtotal" Type="Double" />
+          <Property Name="iva" Type="Double" />
+          <Property Name="total" Type="Double" />
+          <Property Name="efectivo" Type="Double" />
+          <Property Name="cambio" Type="Double" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="DMarysDBModelStoreContainer" CdmEntityContainer="DMarysDBEntities">
+          <EntitySetMapping Name="Clientes"><EntityTypeMapping TypeName="DMarysDBModel.Cliente"><MappingFragment StoreEntitySet="Clientes">
+            <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+            <ScalarProperty Name="nombre" ColumnName="nombre" />
+            <ScalarProperty Name="direccion" ColumnName="direccion" />
+            <ScalarProperty Name="telefono" ColumnName="telefono" />
+            <ScalarProperty Name="email" ColumnName="email" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Creditos"><EntityTypeMapping TypeName="DMarysDBModel.Credito"><MappingFragment StoreEntitySet="Creditos">
+            <ScalarProperty Name="idCredito" ColumnName="idCredito" />
+            <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+            <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+            <ScalarProperty Name="montoInicial" ColumnName="montoInicial" />
+            <ScalarProperty Name="intereses" ColumnName="intereses" />
+            <ScalarProperty Name="montoActual" ColumnName="montoActual" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="DetalleCreditoes"><EntityTypeMapping TypeName="DMarysDBModel.DetalleCredito"><MappingFragment StoreEntitySet="DetalleCredito">
+            <ScalarProperty Name="idDetalleCredito" ColumnName="idDetalleCredito" />
+            <ScalarProperty Name="idCredito" ColumnName="idCredito" />
+            <ScalarProperty Name="abono" ColumnName="abono" />
+            <ScalarProperty Name="fecha" ColumnName="fecha" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="DetalleSucursals"><EntityTypeMapping TypeName="DMarysDBModel.DetalleSucursal"><MappingFragment StoreEntitySet="DetalleSucursal">
+            <ScalarProperty Name="codigoProducto" ColumnName="codigoProducto" />
+            <ScalarProperty Name="idSucursal" ColumnName="idSucursal" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Productos"><EntityTypeMapping TypeName="DMarysDBModel.Producto"><MappingFragment StoreEntitySet="Productos">
+            <ScalarProperty Name="codigoProducto" ColumnName="codigoProducto" />
+            <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+            <ScalarProperty Name="idSucursal" ColumnName="idSucursal" />
+            <ScalarProperty Name="producto1" ColumnName="producto" />
+            <ScalarProperty Name="stock" ColumnName="stock" />
+            <ScalarProperty Name="precio" ColumnName="precio" />
+            <ScalarProperty Name="talla" ColumnName="talla" />
+            <ScalarProperty Name="modelo" ColumnName="modelo" />
+            <ScalarProperty Name="color" ColumnName="color" />
+            <ScalarProperty Name="marca" ColumnName="marca" />
+            <ScalarProperty Name="estilo" ColumnName="estilo" />
+            <ScalarProperty Name="sexo" ColumnName="sexo" />
+            <ScalarProperty Name="descuento" ColumnName="descuento" />
+            <ScalarProperty Name="tipoProducto" ColumnName="tipoProducto" />
+            <ScalarProperty Name="fechaIngreso" ColumnName="fechaIngreso" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Proveedores"><EntityTypeMapping TypeName="DMarysDBModel.Proveedore"><MappingFragment StoreEntitySet="Proveedores">
+            <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+            <ScalarProperty Name="nombreEmpresa" ColumnName="nombreEmpresa" />
+            <ScalarProperty Name="direccionEmpresa" ColumnName="direccionEmpresa" />
+            <ScalarProperty Name="telefonoEmpresa" ColumnName="telefonoEmpresa" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Sucursales"><EntityTypeMapping TypeName="DMarysDBModel.Sucursale"><MappingFragment StoreEntitySet="Sucursales">
+            <ScalarProperty Name="idSucursal" ColumnName="idSucursal" />
+            <ScalarProperty Name="nombre" ColumnName="nombre" />
+            <ScalarProperty Name="direccion" ColumnName="direccion" />
+            <ScalarProperty Name="telefono" ColumnName="telefono" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Usuarios"><EntityTypeMapping TypeName="DMarysDBModel.Usuario"><MappingFragment StoreEntitySet="Usuarios">
+            <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+            <ScalarProperty Name="idSucursal" ColumnName="idSucursal" />
+            <ScalarProperty Name="nombre" ColumnName="nombre" />
+            <ScalarProperty Name="direccion" ColumnName="direccion" />
+            <ScalarProperty Name="sexo" ColumnName="sexo" />
+            <ScalarProperty Name="telefono" ColumnName="telefono" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="VentaProductoes"><EntityTypeMapping TypeName="DMarysDBModel.VentaProducto"><MappingFragment StoreEntitySet="VentaProducto">
+            <ScalarProperty Name="idVentaProducto" ColumnName="idVentaProducto" />
+            <ScalarProperty Name="idVenta" ColumnName="idVenta" />
+            <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+            <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+            <ScalarProperty Name="precioUnitario" ColumnName="precioUnitario" />
+            <ScalarProperty Name="importe" ColumnName="importe" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Ventas"><EntityTypeMapping TypeName="DMarysDBModel.Venta"><MappingFragment StoreEntitySet="Ventas">
+            <ScalarProperty Name="idVenta" ColumnName="idVenta" />
+            <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+            <ScalarProperty Name="cliente" ColumnName="cliente" />
+            <ScalarProperty Name="sucursal" ColumnName="sucursal" />
+            <ScalarProperty Name="fecha" ColumnName="fecha" />
+            <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+            <ScalarProperty Name="iva" ColumnName="iva" />
+            <ScalarProperty Name="total" ColumnName="total" />
+            <ScalarProperty Name="efectivo" ColumnName="efectivo" />
+            <ScalarProperty Name="cambio" ColumnName="cambio" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model">
+        <EntityTypeShape EntityType="DMarysDBModel.Cliente" Width="1.5" PointX="0.75" PointY="0.75" Height="1.9802864583333331" IsExpanded="true" />
+        <EntityTypeShape EntityType="DMarysDBModel.Credito" Width="1.5" PointX="2.75" PointY="0.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DMarysDBModel.DetalleCredito" Width="1.5" PointX="0.75" PointY="3.75" Height="1.787985026041667" IsExpanded="true" />
+        <EntityTypeShape EntityType="DMarysDBModel.DetalleSucursal" Width="1.5" PointX="2.75" PointY="3.75" Height="1.4033821614583335" IsExpanded="true" />
+        <EntityTypeShape EntityType="DMarysDBModel.Producto" Width="1.5" PointX="4.75" PointY="0.75" Height="3.9033007812499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DMarysDBModel.Proveedore" Width="1.5" PointX="4.75" PointY="5.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="DMarysDBModel.Sucursale" Width="1.5" PointX="6.75" PointY="0.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="DMarysDBModel.Usuario" Width="1.5" PointX="0.75" PointY="6.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DMarysDBModel.VentaProducto" Width="1.5" PointX="6.75" PointY="3.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DMarysDBModel.Venta" Width="1.5" PointX="6.75" PointY="6.75" Height="2.9417936197916674" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

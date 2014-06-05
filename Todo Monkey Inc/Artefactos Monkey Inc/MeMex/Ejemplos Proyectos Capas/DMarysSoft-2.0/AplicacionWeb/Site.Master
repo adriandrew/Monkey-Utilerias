@@ -1,0 +1,107 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="DMarysSoftWEB.Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>D'Marys Soft</title>
+    <link href="styles/StyleSheet.css" rel="Stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            font-family: Arial;
+        }
+    </style>
+</head>
+<body background="../images/fondo-rojo.jpg" bgproperties="fixed">
+    <form id="form" runat="server">
+
+      <div id="header">
+        <asp:Image ID="Header" runat="server" ImageUrl="~/images/Header.jpg" />
+      </div>  <%--end header--%>
+      
+      <div id="header2">
+      </div>  <%--end header2--%>
+          
+   <!-- <div id="page"> -->
+ 
+          <div id="menu">
+          <asp:Menu ID="Menu" runat="server" BackColor="#B5C7DE" BorderColor="Orange" 
+                  BorderWidth="3px" DynamicHorizontalOffset="2" Font-Names="Verdana" 
+                  Font-Size="X-Large" ForeColor="#284E98" StaticSubMenuIndent="10px" 
+                  Font-Bold="True" Font-Strikeout="False" BorderStyle="Solid" 
+                  DataSourceID="SiteMapDataSource" StaticDisplayLevels="2">
+              <DynamicHoverStyle BackColor="#284E98" ForeColor="White" />
+              <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+              <DynamicMenuStyle BackColor="#B5C7DE" />
+              <DynamicSelectedStyle BackColor="#507CD1" />
+              <Items>
+                  <asp:MenuItem Text="Ventas" Value="Ventas">
+                      <asp:MenuItem Text="Punto Venta" Value="PuntoVenta"></asp:MenuItem>
+                      <asp:MenuItem Text="Mostrar Ventas" Value="MostrarVentas"></asp:MenuItem>
+                  </asp:MenuItem>
+                  <asp:MenuItem Text="Compras" Value="Compras">
+                      <asp:MenuItem Text="Agregar Compra" Value="AgregarCompra"></asp:MenuItem>
+                      <asp:MenuItem Text="Mostrar Compras" Value="MostrarCompras"></asp:MenuItem>
+                  </asp:MenuItem>
+                  <asp:MenuItem Text="Clientes" Value="Clientes">
+                      <asp:MenuItem Text="Mostrar Clientes" Value="MostrarClientes"></asp:MenuItem>
+                      <asp:MenuItem Text="Agregar Cliente" Value="AgregarCliente"></asp:MenuItem>
+                      <asp:MenuItem Text="Editar Cliente" Value="EditarCliente"></asp:MenuItem>
+                      <asp:MenuItem Text="Eliminar Cliente" Value="EliminarCliente"></asp:MenuItem>
+                  </asp:MenuItem>
+                  <asp:MenuItem Text="Proveedores" Value="Proveedores">
+                      <asp:MenuItem Text="Mostrar Proveedores" Value="MostrarProveedores">
+                      </asp:MenuItem>
+                      <asp:MenuItem Text="Agregar Proveedor" Value="AgregarProveedor"></asp:MenuItem>
+                      <asp:MenuItem Text="Editar Proveedor" Value="EditarProveedor"></asp:MenuItem>
+                      <asp:MenuItem Text="Eliminar Proveedor" Value="EliminarProveedor">
+                      </asp:MenuItem>
+                  </asp:MenuItem>
+                  <asp:MenuItem Text="Usuarios" Value="Usuarios">
+                      <asp:MenuItem Text="Mostrar Usuarios" Value="MostrarUsuarios"></asp:MenuItem>
+                      <asp:MenuItem Text="Agregar Usuario" Value="AgregarUsuario"></asp:MenuItem>
+                      <asp:MenuItem Text="Editar Usuario" Value="EditarUsuario"></asp:MenuItem>
+                      <asp:MenuItem Text="Eliminar Usuario" Value="EliminarUsuario"></asp:MenuItem>
+                  </asp:MenuItem>
+                  <asp:MenuItem Text="Sucursales" Value="Sucursales">
+                      <asp:MenuItem Text="Mostrar Sucursales" Value="MostrarSucursales">
+                      </asp:MenuItem>
+                      <asp:MenuItem Text="Agregar Sucursal" Value="AgregarSucursal"></asp:MenuItem>
+                  </asp:MenuItem>
+              </Items>
+              <StaticHoverStyle BackColor="#284E98" ForeColor="White" />
+              <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+              <StaticSelectedStyle BackColor="#507CD1" />
+            </asp:Menu>
+              <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
+          </div> <!-- end menu -->
+
+         <div id="statusUser">          
+            <asp:LoginName ID="LoginName" CssClass="LoginName" runat="server" Font-Bold="True" 
+                  Font-Size="Large" style="font-family: Arial" />
+              &nbsp;<asp:HyperLink ID="HyperLink" runat="server" BackColor="#99FF66" 
+                 CssClass="style1" Font-Bold="True" Font-Underline="False" 
+                 NavigateUrl="~/Account/CambiarContrasena.aspx" style="font-size: large">Cambiar Contrasena</asp:HyperLink>
+             <asp:LoginStatus ID="LoginStatus" runat="server" 
+                  LogoutAction="RedirectToLoginPage" LogoutPageUrl="~/Login.aspx" 
+                  Font-Bold="True" Font-Size="Large" />
+          </div>
+
+        <div id="content">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
+          
+        </asp:ContentPlaceHolder>
+        </div> <!-- end content -->
+
+          <!-- </div> <!-- end page -->
+
+            <div id="footer">
+            <asp:Image ID="Footer" runat="server" ImageUrl="~/images/Footer.jpg" />
+        </div><%--end footer --%>
+
+    </form>
+</body>
+</html>
